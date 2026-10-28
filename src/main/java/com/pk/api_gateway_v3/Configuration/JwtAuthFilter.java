@@ -13,6 +13,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -21,6 +22,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
 
+@Component
 public class JwtAuthFilter implements GlobalFilter, Ordered {
 
     private final String internalSecret;
