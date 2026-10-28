@@ -29,7 +29,7 @@ public class JwtAuthFilter implements GlobalFilter, Ordered {
     private final SecretKey secretkey;
     private static final Set<String> paths = Set.of("/AUTH-SERVER/auth/login");
 
-    public JwtAuthFilter(@Value("${jwt.secret}") String secret,@Value("${gateway.internal-secret")String internalSecret)
+    public JwtAuthFilter(@Value("${jwt.secret}") String secret,@Value("${gateway.internal-secret}")String internalSecret)
     {
         this.secretkey= Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
         this.internalSecret = internalSecret;
